@@ -18,7 +18,8 @@ An intelligent assistant for querying retail transaction data using both SQL and
 ---
 
 ## 📂 Project Structure
-retail_ai_project/
+retail_ai_project
+
 ├── retail_ai_agent.py # Main logic with Gradio
 
 ├── prompts.py # Prompt templates for LLM
