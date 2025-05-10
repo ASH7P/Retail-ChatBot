@@ -99,7 +99,7 @@ Listed in `requirements.txt`:
 
 Try these in the Gradio interface:
 
-- "What were total sales in City Mall during February?"
+- "What were total sales in C Mall during February?"
 - "Find refund transactions from weekend evenings"
 - "Show failed transactions with high tax amounts"
 
