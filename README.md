@@ -108,9 +108,3 @@ Try these in the Gradio interface:
 ## 📄 License
 
 MIT License — free to use, fork, and customize.
-
----
-
-## 👨‍💻 Author
-
-Built with ❤️ by [Your Name](https://github.com/yourusername)
