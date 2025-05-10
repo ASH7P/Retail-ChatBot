@@ -47,18 +47,7 @@ cd retail-ai-agent
 
 ### ✅ 2. Add The API Key
 
-To keep our API key secure, we did **not** hardcode it. Instead:
-
-1. Create a `.env` file locally with the following contents:
-
-    ```
-    GOOGLE_API_KEY=the-key-from-google-drive
-    DATABASE_URL=sqlite:///transactions.db
-    ```
-
-2. Upload the `.env` file to a secure Google Drive link.  
-3. Share the link with trusted team members (view-only).  
-4. Download the `.env` file into the project root **before running Docker**.
+To keep our API key secure, we did **not** hardcode it. Instead Download the `.env` file from the google drive link to the project root **before running Docker**.
 
 ---
 
