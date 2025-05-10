@@ -96,8 +96,8 @@ Each synthetic profile will be used as a vector query for similarity search. You
 
 Each transaction must include these fields:
 
-- "tax_amount": float (min: 0.0, max: 1.17)
-- "transaction_amount": float (min: 0.0, max: 4.5)
+- "tax_amount": float (min: 0.003500, max: 6.330000)
+- "transaction_amount": float (min: 0.053500, max: 85.520000)
 - "hour": float (0.0 = midnight, 1.0 = end of day)
 - "day_of_week": int (0 = Monday, ..., 6 = Sunday)
 - "is_weekend": int (0 = weekday, 1 = weekend)
