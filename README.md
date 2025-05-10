@@ -19,6 +19,7 @@ An intelligent assistant for querying retail transaction data using both SQL and
 
 ## 📂 Project Structure
 
+```
 retail_ai_project/
 ├── retail_ai_agent.py         # Main logic with Gradio
 ├── prompts.py                 # Prompt templates for LLM
@@ -30,7 +31,7 @@ retail_ai_project/
 ├── Dockerfile
 ├── docker-compose.yml
 └── README.md
-
+```
 ---
 
 ## 🛠️ Setup Instructions
