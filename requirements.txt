@@ -1,0 +1,10 @@
+pydantic
+langchain-google-genai
+langchain-core
+qdrant-client
+sqlalchemy
+scikit-learn
+pandas
+numpy
+joblib
+gradio

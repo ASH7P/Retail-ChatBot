@@ -1,0 +1,10 @@
+services:
+  retail_ai_agent:
+    build: .
+    ports:
+      - "7860:7860"
+    volumes:
+      - ./local_qdrant:/app/local_qdrant
+      - ./transactions.db:/app/transactions.db
+    env_file:
+      - .env
