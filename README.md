@@ -45,14 +45,14 @@ cd retail-ai-agent
 
 ---
 
-### ✅ 2. Add Your API Key
+### ✅ 2. Add The API Key
 
-To keep your API key secure, do **not** hardcode it. Instead:
+To keep our API key secure, we did **not** hardcode it. Instead:
 
 1. Create a `.env` file locally with the following contents:
 
     ```
-    GOOGLE_API_KEY=your-gemini-api-key
+    GOOGLE_API_KEY=the-key-from-google-drive
     DATABASE_URL=sqlite:///transactions.db
     ```
 
