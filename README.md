@@ -1,102 +1,115 @@
 # 🛒 Retail AI Agent
 
-An intelligent assistant for querying retail transaction data using both SQL and custom vector search powered by Qdrant and Google Gemini. Supports a Gradio web interface for interactive use.
+An intelligent assistant for querying retail transaction data using both SQL and custom vector search powered by Qdrant and Google Gemini. Includes a clean Gradio-based chat interface and is fully Dockerized for deployment.
 
 ---
 
 ## 🚀 Features
 
-- ✅ Natural language understanding of user queries
-- ✅ Hybrid routing to:
-  - SQL database (`SQLite`)
-  - Vector database (`Qdrant`) using precomputed embeddings
-- ✅ Supports structured filters (e.g., branch, mall)
-- ✅ Gemini LLM integration (via LangChain)
-- ✅ Gradio interface for browser-based chat
-- ✅ Dockerized deployment with `docker-compose`
+- ✅ Understands natural language queries  
+- ✅ Smart routing to:
+  - SQL database (via SQLite)
+  - Vector search (via Qdrant and your own engineered embeddings)  
+- ✅ Supports filterable metadata (e.g. mall, branch, transaction status)  
+- ✅ Integrates with Google Gemini via LangChain  
+- ✅ Gradio-powered web interface  
+- ✅ Fully containerized using Docker + Docker Compose
 
 ---
 
 ## 📂 Project Structure
-retail_ai_project
 
-├── retail_ai_agent.py # Main logic with Gradio
-
-├── prompts.py # Prompt templates for LLM
-
-├── scaler.joblib # Pretrained numerical scaler
-
-├── encoder.joblib # One-hot encoder for categorical features
-
-├── transactions.db # SQLite retail data
-
-├── local_qdrant/ # Persistent vector DB directory
-
+retail_ai_project/
+├── retail_ai_agent.py         # Main logic with Gradio
+├── prompts.py                 # Prompt templates for LLM
+├── scaler.joblib              # Pretrained scaler for numerical inputs
+├── encoder.joblib             # One-hot encoder for categorical variables
+├── transactions.db            # Local SQLite database
+├── local_qdrant/              # Persistent Qdrant vector storage
 ├── requirements.txt
-
 ├── Dockerfile
-
 ├── docker-compose.yml
-
 └── README.md
-
-
 
 ---
 
 ## 🛠️ Setup Instructions
 
-### ✅ 1. Clone the Repo
+### ✅ 1. Clone the Repository
 
 ```bash
 git clone https://github.com/yourusername/retail-ai-agent.git
 cd retail-ai-agent
-✅ 2. Add your environment variables
-Either create a .env file or edit the docker-compose.yml:
+```
 
-env
-Copy
-Edit
-GOOGLE_API_KEY=your-gemini-api-key
-DATABASE_URL=sqlite:///transactions.db
-✅ 3. Run with Docker Compose
-bash
-Copy
-Edit
+---
+
+### ✅ 2. Add Your API Key
+
+To keep your API key secure, do **not** hardcode it. Instead:
+
+1. Create a `.env` file locally with the following contents:
+
+    ```
+    GOOGLE_API_KEY=your-gemini-api-key
+    DATABASE_URL=sqlite:///transactions.db
+    ```
+
+2. Upload the `.env` file to a secure Google Drive link.  
+3. Share the link with trusted team members (view-only).  
+4. Download the `.env` file into the project root **before running Docker**.
+
+---
+
+### ✅ 3. Build and Run the App
+
+```bash
 docker-compose build
 docker-compose up
-Then open http://localhost:7860 in your browser.
+```
 
-🧠 Prompts (in prompts.py)
-The assistant uses 4 modular prompts:
+Then open your browser and visit: http://localhost:7860
 
-ROUTER_PROMPT: Decides between SQL, Vector, or both
+---
 
-SQL_PROMPT: Generates SQL code
+## 🧠 Prompt Design (in `prompts.py`)
 
-VECTOR_PROMPT: Generates vector search profiles
+The assistant uses four modular prompts:
 
-FINAL_PROMPT: Crafts a final answer using context + history
+- `ROUTER_PROMPT`: Chooses between SQL or Vector routes  
+- `SQL_PROMPT`: Generates valid SQL code  
+- `VECTOR_PROMPT`: Creates vector search profiles  
+- `FINAL_PROMPT`: Composes a final response using all data + history  
 
-📦 Dependencies
-All dependencies are in requirements.txt and include:
+---
 
-gradio
+## 📦 Dependencies
 
-pandas, numpy, sqlalchemy, joblib, scikit-learn
+Listed in `requirements.txt`:
 
-langchain, langchain-google-genai
+- `gradio`
+- `pandas`, `numpy`, `sqlalchemy`, `joblib`, `scikit-learn`
+- `langchain`, `langchain-google-genai`
+- `qdrant-client`
 
-qdrant-client
+---
 
-🧪 Example Queries
-Try these on the Gradio UI:
+## 🧪 Example Queries
 
-"What were total sales in City Mall during February?"
+Try these in the Gradio interface:
 
-"Find refund transactions from weekend evenings"
+- "What were total sales in City Mall during February?"
+- "Find refund transactions from weekend evenings"
+- "Show failed transactions with high tax amounts"
 
-"Show failed transactions with high tax amounts"
+---
 
-💡 License
-MIT License. Feel free to fork and extend.
+## 📄 License
+
+MIT License — free to use, fork, and customize.
+
+---
+
+## 👨‍💻 Author
+
+Built with ❤️ by [Your Name](https://github.com/yourusername)
