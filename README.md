@@ -20,14 +20,23 @@ An intelligent assistant for querying retail transaction data using both SQL and
 ## 📂 Project Structure
 retail_ai_project/
 ├── retail_ai_agent.py # Main logic with Gradio
+
 ├── prompts.py # Prompt templates for LLM
+
 ├── scaler.joblib # Pretrained numerical scaler
+
 ├── encoder.joblib # One-hot encoder for categorical features
+
 ├── transactions.db # SQLite retail data
+
 ├── local_qdrant/ # Persistent vector DB directory
+
 ├── requirements.txt
+
 ├── Dockerfile
+
 ├── docker-compose.yml
+
 └── README.md
 
 
